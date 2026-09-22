@@ -1,0 +1,96 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Skoftebyns rörservice: lead generation WordPress site with CRO basics",
+		"description": "Block theme, multi-step quote form with lead inbox, and content migrated from an old site, for a fictional roofing company.",
+		"author": "hugooblak",
+		"categories": [
+			"Themes"
+		]
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/skoftebynsrorservice-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "theme/skoftebynsrorservice"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/skoftebynsrorservice-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "plugins/skoftebynsrorservice-leads"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "mkdir",
+			"path": "/wordpress/wp-content/skoftebynsrorservice-setup/legacy-export"
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/skoftebynsrorservice-setup/setup.php",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/skoftebynsrorservice-demo/main/content/setup.php"
+			}
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/skoftebynsrorservice-setup/migrate.php",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/skoftebynsrorservice-demo/main/content/migrate.php"
+			}
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/skoftebynsrorservice-setup/legacy-export/how-long-does-a-roof-last.html",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/skoftebynsrorservice-demo/main/content/legacy-export/how-long-does-a-roof-last.html"
+			}
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/skoftebynsrorservice-setup/legacy-export/repair-or-replace.html",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/skoftebynsrorservice-demo/main/content/legacy-export/repair-or-replace.html"
+			}
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/skoftebynsrorservice-setup/legacy-export/after-a-hail-storm.html",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/skoftebynsrorservice-demo/main/content/legacy-export/after-a-hail-storm.html"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; require '/wordpress/wp-content/skoftebynsrorservice-setup/setup.php';"
+		}
+	]
+}
