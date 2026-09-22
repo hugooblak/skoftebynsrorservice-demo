@@ -18,7 +18,5 @@ return array(
 		array( 'Vi fick förbluffande snabb service och bra kommunikation. De lyckades klämma in installation av köksblandare, diskmaskin med tillhörande kulventiler och kopplingar samma dag jag kontaktade dem. Slutresultatet snyggt och även städat.', 'Cedrik Högnäs', 'för 11 månader sedan' ),
 		array( 'På fyra dagar var badkaret bortplockat och dusch och handduksvärmare installerad! Snabb återkoppling och riktigt snyggt arbete. Rekommenderar Skoftebyns rörservice varmt!', 'Helene', 'för 10 månader sedan' ),
 	),
-	'bild_hero'      => 'foto-1.jpg',
-	'bilder'         => array( 'foto-2.jpg', 'foto-3.jpg', 'foto-4.jpg' ),
 	'ar_riktig'      => true,
 );
