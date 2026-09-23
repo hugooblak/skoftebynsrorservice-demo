@@ -5,6 +5,7 @@
  */
 return array(
 	'foretag'        => 'Skoftebyns rörservice',
+	'bransch'        => 'VVS-montör',
 	'telefon'        => '070-548 83 43',
 	'telefon_tel'    => '+46705488343',
 	'ort'            => 'Trollhättan',
